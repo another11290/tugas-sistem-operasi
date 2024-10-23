@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Operasi</title>
+    <style>
+        /* Reset margin dan padding untuk semua elemen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Gaya untuk body dengan gambar background bergerak */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://cdn.pixabay.com/animation/2023/02/23/01/11/01-11-26-464_512.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        /* Overlay untuk memperbaiki kontras teks */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Efek overlay gelap */
+            z-index: -1;
+        }
+
+        /* Gaya untuk header */
+        header {
+            background-color: rgba(51, 51, 51, 0.8); /* Transparan */
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Gaya untuk artikel */
+        article {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0;
+        }
+
+        /* Gaya untuk konten setiap materi */
+        .materi {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.9); /* Warna hitam dengan transparansi lebih kuat */
+            border-radius: 15px; /* Sudut tumpul */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8), 
+                        -5px -5px 15px rgba(255, 255, 255, 0.1); /* Efek 3D */
+            transition: all 0.3s ease; /* Transisi untuk efek hover */
+            cursor: pointer;
+        }
+
+        /* Animasi mengambang saat hover */
+        .materi:hover {
+            transform: translateY(-10px) scale(1.05); /* Mengambang dan memperbesar */
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9), 
+                        -10px -10px 20px rgba(255, 255, 255, 0.2); /* Bayangan lebih intens */
+        }
+
+        /* Animasi saat menahan layar (active state) */
+        .materi:active {
+            transform: translateY(-15px) scale(1.08); /* Lebih mengambang dan memperbesar */
+            box-shadow: 12px 12px 25px rgba(0, 0, 0, 1), 
+                        -12px -12px 25px rgba(255, 255, 255, 0.3); /* Bayangan lebih dalam */
+        }
+
+        /* Gaya untuk judul */
+        h1, h2 {
+            color: white;
+        }
+
+        /* Gaya untuk gambar agar responsif */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Gaya untuk link */
+        a {
+            color: #1a73e8;
+        }
+
+        /* Gaya untuk footer */
+        footer {
+            text-align: center;
+            margin: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Desain responsif untuk perangkat kecil seperti smartphone */
+        @media (max-width: 768px) {
+            article {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            header {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Desain responsif untuk perangkat dengan layar sangat kecil (seperti iPhone atau smartphone kecil) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2em;
+            }
+
+            h2 {
+                font-size: 1em;
+            }
+
+            footer {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><strong>Sistem Operasi</strong></h1>
+    </header>
+    
+    <article>
+        <div class="materi">
+            <h2>1. Batch System</h2>
+            <p><strong>Pengertian:</strong> Sistem operasi yang mengeksekusi tugas secara berkelompok (batch) tanpa adanya interaksi langsung dengan pengguna selama proses eksekusi.</p>
+            <p><strong>Penjelasan:</strong> Tugas-tugas dikumpulkan terlebih dahulu dalam satu batch, kemudian diproses secara berurutan tanpa adanya intervensi pengguna. Hal ini memungkinkan penggunaan sumber daya secara efisien, tetapi juga dapat menyebabkan waktu tunggu yang lama bagi pengguna.</p>
+            <img src="https://tse1.mm.bing.net/th?id=OIP.0Bx4ahHb8CDg1OKMECqewQHaEg&pid=Api&P=0&h=180" alt="Ilustrasi Sistem Batch">
+            <p><a href="http://www.wikipediaSistemBatch.com" target="_blank">Sumber: www.wikipediaSistemBatch.com</a></p>
+        </div>
+
+        <div class="materi">
+            <h2>2. Critical Section</h2>
+            <p><strong>Pengertian:</strong> Segmen kode program yang hanya dapat diakses oleh satu proses pada suatu waktu.</p>
+            <p><strong>Penjelasan:</strong> Critical section digunakan untuk melindungi data yang diakses secara bersamaan oleh beberapa proses. Jika beberapa proses mencoba mengakses critical section secara bersamaan, dapat terjadi kondisi race, yaitu ketika hasil eksekusi program tergantung pada urutan eksekusi instruksi. Untuk mencegah kondisi race, digunakan mekanisme mutual exclusion, yaitu memastikan hanya satu proses yang dapat berada di dalam critical section pada suatu waktu.</p>
+            <img src="https://tse1.mm.bing.net/th?id=OIP.N1Jz2G81GKNPugI_LIxwWQHaFj&pid=Api&P=0&h=180" alt="Ilustrasi Critical Section">
+            <p><a href="http://www.wikipediaCriticalSection.com" target="_blank">Sumber: www.wikipediaCriticalSection.com</a></p>
+        </div>
+
+        <div class="materi">
+            <h2>3. Process Control Block (PCB)</h2>
+            <p><strong>Pengertian:</strong> Struktur data yang berisi informasi tentang suatu proses dalam sistem operasi.</p>
+            <p><strong>Penjelasan:</strong> PCB berisi informasi seperti ID proses, status proses (running, waiting, ready), prioritas proses, daftar register proses, pointer ke tabel halaman, dan informasi lainnya yang diperlukan untuk mengelola proses. PCB digunakan oleh sistem operasi untuk mengatur dan mengendalikan eksekusi proses.</p>
+            <img src="https://tse2.mm.bing.net/th?id=OIP.Q5Cg6iJjNCxu62eY_QXnyQAAAA&pid=Api&P=0&h=180" alt="Ilustrasi Process Control Block">
+            <p><a href="http://www.wikipediaProcessControlBlock.com" target="_blank">Sumber: www.wikipediaProcessControlBlock.com</a></p>
+        </div>
+
+        <div class="materi">
+            <h2>4. Distributed Processing</h2>
+            <p><strong>Pengertian:</strong> Model pemrosesan di mana tugas-tugas dibagi dan dijalankan pada beberapa komputer yang terhubung dalam jaringan.</p>
+            <p><strong>Penjelasan:</strong> Distributed processing memungkinkan pemanfaatan sumber daya secara lebih efisien, meningkatkan kinerja, dan meningkatkan ketersediaan sistem. Beberapa contoh aplikasi distributed processing adalah sistem jaringan komputer, sistem basis data terdistribusi, dan aplikasi cloud computing.</p>
+            <img src="https://tse1.mm.bing.net/th?id=OIP.F77ccmFpIgS1k8SQrz56vAHaFq&pid=Api&P=0&h=180" alt="Ilustrasi Distributed Processing">
+            <p><a href="http://www.wikipediaDistributedProcessing.com" target="_blank">Sumber: www.wikipediaDistributedProcessing.com</a></p>
+        </div>
+
+        <div class="materi">
+            <h2>5. Handheld</h2>
+            <p><strong>Pengertian:</strong> Perangkat komputer portabel yang dapat dipegang dengan satu tangan.</p>
+            <p><strong>Penjelasan:</strong> Handheld biasanya memiliki layar kecil dan dilengkapi dengan fitur-fitur seperti keyboard fisik atau virtual, stylus, dan konektivitas nirkabel. Contoh handheld adalah smartphone, tablet, dan PDA (Personal Digital Assistant).</p>
+            <img src="https://tse2.mm.bing.net/th?id=OIP.IpvPppoPHlkVd-oOKZbicQHaDz&pid=Api&P=0&h=180" alt="Ilustrasi Perangkat Handheld">
+            <p><a href="http://www.wikipediaPerangkatHandheld.com" target="_blank">Sumber: www.wikipediaPerangkatHandheld.com</a></p>
+        </div>
+
+        <div class="materi">
+            <h2>6. Thread</h2>
+            <p><strong>Pengertian:</strong> Unit terkecil dari eksekusi dalam suatu proses.</p>
+            <p><strong>Penjelasan:</strong> Thread merupakan bagian dari suatu proses yang dapat dieksekusi secara independen. Beberapa proses dapat memiliki beberapa thread yang berjalan secara paralel atau konkuren. Thread memungkinkan pemanfaatan sumber daya secara lebih efisien dan meningkatkan kinerja aplikasi.</p>
+            <img src="https://tse1.mm.bing.net/th?id=OIP.6bC51s1x6gEXiPmmPuAM7gHaCi&pid=Api&P=0&h=180" alt="Ilustrasi Thread">
+            <p><a href="http://www.wikipediaThread.com" target="_blank">Sumber: www.wikipediaThread.com</a></p>
+        </div>
+    </article>
+
+    <footer>
+        &copy; dibuat oleh : Alip Juli Pratama
+    </footer>
+</body>
+</html>
